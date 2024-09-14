@@ -1,0 +1,18 @@
+# This is the basic program which will ask the two integer inputs form the user.
+# Then it will convert number into binary and compare whether both are same or not
+# Then printing the count,so that how many times we have to change the binary of the first number, so that it will be same as the binary of the second number.
+
+
+w=int(input("Enter the first number : ")) #take input from the user
+h=int(input("Enter the second number : ")) #takes input from the user
+s=bin(w)[2:].zfill(8) #converts int to binary with length of 8
+o=list(s) #converting to list for easy comparision
+q=bin(h)[2:].zfill(8) #converts int to binary with length of 8
+c=list(q) #converting to list for easy comparision
+print(f"This is the binary conversion of the number {w}  : {s}") #printing the number with it's binary value
+print(f"This is the binary conversion of the number {h} : {q}")  #printing the number with it's binary value
+count=0
+for i in range(len(o)):
+    if o[i]!=c[i]: #checking which places are not equal
+        count+=1 #counting
+print(f"\n{count} times message must be shifted so that {s} can be same as {q} ") #printing the counting message on screen
